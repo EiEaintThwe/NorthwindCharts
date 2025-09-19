@@ -35,7 +35,7 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            // ကျွန်တော်တို့ရဲ့ controller endpoint ကနေ Data ကို သွားယူပါမယ်။
+           
             $.ajax({
                 url: "/dashboard/getbestsellingproducts",
                 type: "get",
@@ -50,7 +50,7 @@
         });
 
         function renderApexChart(data) {
-            // Data ကို ApexCharts format ဖြစ်အောင် ပြောင်းပါမယ်။
+           
             const chartLabels = data.map(item => item.productName);
             const chartSeries = data.map(item => item.totalQuantity);
 
@@ -79,11 +79,11 @@
         }
 
         function renderHighCharts(data) {
-            // Data ကို HighCharts format ဖြစ်အောင် ပြောင်းပါမယ်။
+           
             const chartSeries = data.map((item, index) => ({
                 name: item.productName,
                 y: item.totalQuantity,
-                // Make the first slice selected and popped out
+               
                 sliced: index === 0,
                 selected: index === 0
             }));
